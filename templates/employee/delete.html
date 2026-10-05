@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="card">
+      <h2 style="color: #dc3545;">Delete Account</h2>
+
+      <p style="margin-bottom: 20px; color: #555; font-size: 14px;">
+        Are you sure you want to delete your account ?
+        <br /><small style="color: #dc3545;">(This action cannot be undone!)</small>
+      </p>
+
+      <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-red">Yes, Delete My Account</button>
+      </form>
+
+      <button onclick="location.href='{% url 'employee' %}'" class="btn btn-back">Cancel / Back</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Employee Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Employee Login</h2>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="msg msg-error">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="empid">Employee ID</label>
+            <input type="number" placeholder="Enter Employee ID" name="empid" id="empid" required>
+
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <button class="btn btn-back" onclick="location.href='{% url 'home' %}'">Back to Home</button>
+    </div>
+
+</body>
+</html>

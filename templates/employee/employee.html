@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Welcome {{ request.session.name }} To Linkcode Technologies</h1>
+        <ul>
+            <li><a href="{% url 'update' %}" class="btn">Update Profile</a></li>
+            <li><a href="{% url 'display' %}" class="btn btn-green">Display All</a></li>
+            <li><a href="{% url 'delete' %}" class="btn btn-red">Delete Account</a></li>
+            <li><a href="{% url 'home' %}" class="btn btn-back">Logout</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
